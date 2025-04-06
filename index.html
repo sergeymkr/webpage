@@ -18,7 +18,7 @@
 
     <div class="currency-converter">
       <h2>Конвертер валют (USD → AMD)</h2>
-      <input type="number" id="usdInput" placeholder="Сумма в USD" oninput="convertCurrency()" />
+      <input type="number" id="usdInput" placeholder="Сумма в USD" />
       <div id="amdResult"></div>
     </div>
   </div>
@@ -54,6 +54,9 @@
         amdResult.textContent = "Пожалуйста, введите корректную сумму.";
       }
     }
+
+    // Real-time currency conversion
+    document.getElementById("usdInput").addEventListener("input", convertCurrency);
   </script>
 </body>
 </html>
