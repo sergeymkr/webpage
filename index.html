@@ -15,6 +15,13 @@
       <button class="btn btn-primary">Наши Услуги</button>
       <button class="btn btn-outline">Подробнее</button>
     </div>
+
+    <div class="currency-converter">
+      <h2>Конвертер валют (USD → AMD)</h2>
+      <input type="number" id="usdInput" placeholder="Сумма в USD" />
+      <button class="btn btn-primary" onclick="convertCurrency()">Конвертировать</button>
+      <div id="amdResult"></div>
+    </div>
   </div>
 
   <script>
@@ -35,6 +42,17 @@
 
     updateTimer();
     setInterval(updateTimer, 1000);
+
+    function convertCurrency() {
+      const usd = parseFloat(document.getElementById("usdInput").value);
+      const rate = 387; // Примерный курс: 1 USD = 387 AMD
+      if (!isNaN(usd)) {
+        const amd = usd * rate;
+        document.getElementById("amdResult").textContent = `${usd} USD = ${amd.toFixed(2)} AMD`;
+      } else {
+        document.getElementById("amdResult").textContent = "Пожалуйста, введите корректную сумму.";
+      }
+    }
   </script>
 </body>
 </html>
