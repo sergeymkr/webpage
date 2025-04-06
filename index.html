@@ -47,7 +47,7 @@
       const amdResult = document.getElementById("amdResult");
       const rate = 387; // Примерный курс: 1 USD = 387 AMD
       const usd = parseFloat(usdInput.value);
-      if (!isNaN(usd)) {
+      if (!isNaN(usd) && usd >= 0) {
         const amd = usd * rate;
         amdResult.textContent = `${usd} USD = ${amd.toFixed(2)} AMD`;
       } else {
