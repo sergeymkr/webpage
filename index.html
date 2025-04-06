@@ -49,7 +49,7 @@
       const usd = parseFloat(usdInput.value);
       if (!isNaN(usd) && usd >= 0) {
         const amd = usd * rate;
-        amdResult.textContent = `${usd} USD = ${amd.toFixed(2)} AMD`;
+        amdResult.textContent = `${usd} USD = ${Math.round(amd)} AMD`; // Округляем до целого числа
       } else {
         amdResult.textContent = "Пожалуйста, введите корректную сумму.";
       }
